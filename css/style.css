@@ -1,0 +1,40 @@
+header {
+    background-color: #fa8e00
+ }
+ header h1 {
+   color: #f0ebcc;
+   text-align: center;
+   font-size: 100px;
+   font-style: italic;
+ }
+nav ul li  {
+    display: inline-block;
+    margin-left: 50px;
+    font-size: 25px;
+    border: 1px solid #bdcbdd;
+    padding-bottom: 20px;
+    padding-top: 20px;
+ }
+nav ul li a {
+    color: #0044ff;
+    text-decoration: none;
+ }
+div h3 {
+ font-size: 50px;
+ text-align: center;
+ }
+ section div img {
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+ footer p {
+   text-align: center;
+   background-color: #3f3697;
+   color: #f0ebcc;
+ }

@@ -12,7 +12,7 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 let arrOfObjects = [];
-function SalmonShopes(locationName, minCost, maxCost) {
+function SalmonShopes(locationName, minCost, maxCost, avgCookieSale) {
 
     this.locationName = locationName;
     this.minCost = minCost;
@@ -56,7 +56,7 @@ SalmonShopes.prototype.calcRandomNumofCust = function () {
 
     },
     SalmonShopes.prototype.render = function () {
-        let te = document.createElement('tr');
+        let tr = document.createElement('tr');
         table.appendChild(tr);
         let firstCell = document.createElement('th');
         tr.appendChild(firstCell);
@@ -83,10 +83,10 @@ getHeaderRow();
 for (let i = 0; i < arrOfObjects.length; i++) {
     arrOfObjects[i].calcRandomNumofCust();
     arrOfObjects[i].calcRandomNumofCookies();
-    arrOfObjects.render();
+    arrOfObjects[i].render();
 }
 
-function footerRow (){
+function footerRow() {
     let lastRow = document.createElement('tr');
     table.appendChild(lastRow);
     let firstCell = document.createElement('th');
@@ -94,11 +94,12 @@ function footerRow (){
     firstCell.textContent = 'Totals';
     let megaTotal = 0;
 
-    for(let i = 0 ; i < operationHours.length ; i++ ){
-        let sum = 0;
-        for(let j = 0 ; arrOfObjects.length ; j++){
-            sum += arrOfObjects[j].cookiesHourly[i];
+    for (let i = 0; i < operationHours.length; i++) {
 
+        let sum = 0;
+        for (let j = 0;j <  arrOfObjects.length; j++) {
+            console.log(arrOfObjects[j])
+            sum = sum + arrOfObjects[j].cookiesHourly[i];
         }
         let td = document.createElement('td');
         lastRow.appendChild(td);
